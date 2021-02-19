@@ -32,14 +32,19 @@ jobs:
         ${{ runner.os }}-
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Unit Test , Integration Test
+   
+    - name: Create a temporary artifact downloads folder
+      run: mkdir downloads
+   
+    - name: Add artifacts to publish to the temp folder (Run Unit, Integration Test)       
       run: |
-        echo "Unit Test passed"
-        echo "Integration Test passed"
-    - name: Upload pytest test results
+          cd downloads
+          echo "Unit Test passed\n" >> artifact.txt
+          echo "Integration Test passed\n" >> artifact.txt    
+          cd ..     
+          
+    - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
-      with:
-        name: pytest-results
-        path: junit/test-results-${{ matrix.python-version }}.xml
-      # Use always() to always run this step to publish test results when there are test failures
-      if: ${{ always() }}
+      with: 
+          name: assets-for-download
+          path: downloads
