@@ -39,12 +39,12 @@ jobs:
     - name: Add artifacts to publish to the temp folder (Run Unit, Integration Test)       
       run: |
           cd downloads
-          echo "Unit Test passed\n" >> artifact.txt
-          echo "Integration Test passed\n" >> artifact.txt    
+          echo "Unit Test passed" >> artifact.txt
+          echo "Integration Test passed" >> artifact.txt    
           cd ..     
           
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
-          name: assets-for-download
+          name: publish-artifacts
           path: downloads
