@@ -94,7 +94,18 @@ jobs:
          run: |-          
           kubectl apply -f ./service2-deployment.yaml 
           kubectl apply -f ./service2-service.yaml  
-          kubectl apply -f ./service1-deployment.yaml
-          
+          kubectl apply -f ./service1-deployment.yaml          
           kubectl apply -f ./service1-service.yaml
+        
+       - name: Smoke Test       
+         run: |
+          cd ./smokeTest/
+          smoke-services.sh > a.txt
+          cp -r a.txt downloads/
+          rm -rf a.txt
+          cd ..
+          cd downloads
+          cat a.txt >> artifact.txt
+          rm -rf a.txt          
+          cd ..    
           
