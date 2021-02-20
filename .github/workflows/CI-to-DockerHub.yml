@@ -65,7 +65,7 @@ jobs:
           name: publish-artifacts
           path: downloads    
     
-  Deploy to Stagging:
+  Deploy_to_Stagging:
       runs-on: ubuntu-18.04
           
       steps:
