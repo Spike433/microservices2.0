@@ -66,6 +66,7 @@ jobs:
           path: downloads    
     
   Deploy_to_Stagging:
+      needs: Publish_Artifact
       runs-on: ubuntu-18.04
           
       steps:
