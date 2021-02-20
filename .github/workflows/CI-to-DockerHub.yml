@@ -1,0 +1,69 @@
+
+name: CI to Docker Hub
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-18.04
+    
+    steps:
+      - name: Check Out Repo 
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push service1
+        id: docker_build1
+        uses: docker/build-push-action@v2
+        with:
+          context: ./service1/
+          file: ./service1/Dockerfile
+          push: push
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service1:2.0
+          
+      - name: Build and push service2
+        id: docker_build2
+        uses: docker/build-push-action@v2
+        with:
+          context: ./service2/
+          file: ./service1/Dockerfile
+          push: push
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service2:2.6
+          
+  publish:         
+    needs: build 
+    runs-on: ubuntu-18.04
+    
+    steps:      
+      - name: Create a temporary artifact downloads folder
+        run: mkdir downloads   
+      - name: Add artifacts to publish to the temp folder (Run Unit, Integration Test)       
+        run: |
+          cd downloads
+          echo "Unit Test passed" >> artifact.txt
+          echo "Integration Test passed" >> artifact.txt    
+          cd ..     
+          
+      - name: Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: publish-artifacts
+          path: downloads    
+          
+          
+
