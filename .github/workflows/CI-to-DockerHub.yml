@@ -33,7 +33,7 @@ jobs:
         with:
           context: ./service1/
           file: ./service1/Dockerfile
-          push: push
+          push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service1:2.0
           
       - name: Build and push service2
@@ -42,7 +42,7 @@ jobs:
         with:
           context: ./service2/
           file: ./service1/Dockerfile
-          push: push
+          push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service2:2.6
           
   publish:         
