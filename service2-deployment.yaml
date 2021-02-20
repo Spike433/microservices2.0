@@ -15,7 +15,7 @@ spec:
         app: service2
     spec:
       containers:
-        - image: spike433/service2:2.5
+        - image: spike433/service2:2.6
           name: service2
           ports:
             - containerPort: 8080

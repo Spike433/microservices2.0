@@ -1,7 +1,7 @@
 import requests
 import sys
 
-SERVICE1_URL = "http://10.96.1.1:8080"
+SERVICE1_URL = "http://10.48.1.1:8080"
 
 message = requests.get('https://api.github.com').text # (sys.stdin.readline() , lets use this website for testing inst$
 
