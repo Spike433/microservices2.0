@@ -27,14 +27,12 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build and push
+      - name: Build and push service1
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./service1/
           file: ./service1/Dockerfile
           push: true
-          tags: spike433/service1:latest
+          tags: spike433/service1:2.0
 
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
