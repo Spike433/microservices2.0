@@ -45,7 +45,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/service2:2.6
           
-  Publish Artifact:         
+  Publish_Artifact:         
     needs: Build 
     runs-on: ubuntu-18.04
     
