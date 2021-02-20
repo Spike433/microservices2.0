@@ -34,7 +34,7 @@ jobs:
           context: ./service1/
           file: ./service1/Dockerfile
           push: true
-          tags: spike433/service1:2.7
+          tags: spike433/service1:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
