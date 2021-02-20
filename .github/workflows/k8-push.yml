@@ -17,7 +17,8 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Login to k8 Engine
-        run: |-
+        run: |
+           gcloud config set account juhacar116
            ${{secrets.K8_CONNECT}}
            kubectl get all
            
