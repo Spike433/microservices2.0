@@ -1,0 +1,23 @@
+name: k8 push
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-18.04
+    
+    steps:
+      - name: Check Out Repo 
+        uses: actions/checkout@v2
+        
+      - name: Login to k8 Engine
+        run: |-
+           ${{secrets.K8_CONNECT}}
+           kubectl get all
+           
