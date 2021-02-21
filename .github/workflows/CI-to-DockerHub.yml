@@ -98,7 +98,17 @@ jobs:
           kubectl apply -f ./service1-service.yaml
         
        - name: Smoke Test       
-         run: |         
-          sh ./smokeTest/smoke-services.sh >> artifact.txt                    
+         run: |  
+          cd downloads
+          chmod +x ./smokeTest/smoke-services.sh
+          chmod +x ./smokeTest/smoke.sh        
+          ./smokeTest/smoke-services.sh >> artifact.txt                    
+          echo "End to End Test passed" >> artifact.txt    
           cd ..    
           
+       - name: Use the Upload Artifact GitHub Action
+         uses: actions/upload-artifact@v2
+         with: 
+          name: publish-artifacts
+          path: downloads
+           
