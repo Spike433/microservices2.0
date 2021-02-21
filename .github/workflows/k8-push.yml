@@ -18,4 +18,19 @@ jobs:
      
        - name: Output Run Number
          run: echo ${{ github.run_number }}        
+         
+       - name: Add artifacts to publish to the temp folder (Run Unit, Integration Test)       
+         run: |
+          mkdir downloads
+          cd downloads
+          echo "Unit Test passed" >> tests${{ github.run_number }}.txt
+          echo "Integration Test passed" >> tests${{ github.run_number }}.txt    
+          cd ..     
+          
+       - name: Use the Upload Test Artifact GitHub Action
+         uses: actions/upload-artifact@v2
+         with: 
+          name: publish-test-artifacts
+          path: downloads      
+         
           
