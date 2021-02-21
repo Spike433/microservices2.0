@@ -56,14 +56,14 @@ jobs:
       - name: Add artifacts to publish to the temp folder (Run Unit, Integration Test)       
         run: |
           cd downloads
-          echo "Unit Test passed" >> tests.txt
-          echo "Integration Test passed" >> tests.txt    
+          echo "Unit Test passed" >> tests-${{ github.run_number }}.txt 
+          echo "Integration Test passed" >> tests-${{ github.run_number }}.txt     
           cd ..     
           
       - name: Use the Upload Test Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
-          name: publish-test-artifacts
+          name: publish-test-artifacts-${{ github.run_number }}
           path: downloads    
     
   
@@ -107,14 +107,14 @@ jobs:
          run: |            
           chmod +x ./smokeTest/smoke-services.sh
           chmod +x ./smokeTest/smoke.sh        
-          ./smokeTest/smoke-services.sh >> downloads/smokeArtifact.txt                    
-          echo "End to End Test passed" >> downloads/smokeArtifact.txt    
+          ./smokeTest/smoke-services.sh >> downloads/smokeArtifact-${{ github.run_number }}.txt                    
+          echo "End to End Test passed" >> downloads/smokeArtifact-${{ github.run_number }}.txt    
           
           
        - name: Use the Upload Smoke Artifact GitHub Action
          uses: actions/upload-artifact@v2
          with: 
-          name: publish-Smoke-artifacts
+          name: publish-Smoke-artifacts-${{ github.run_number }}
           path: downloads
   
   Deploy_to_Production:
