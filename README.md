@@ -44,4 +44,23 @@
    -http://35.228.242.68      (service1 can't display its data because of watchdog that handles it in background)\
    -http://35.228.149.8:5000  (service2 - not sure how stdin should work (via url, arguments ...) so it is ignored)
 
+### Questions about tasks that are left
+
+1. Where should be deployed Production, deploying it to same k8 cluster doesn't make sense, making another cluster and deploying there also doesn't seem right.
+
+![Alt text](/images/Screenshot_4.png?raw=true "Optional Title")
+
+2. Confused about 2 projects, where? how it looks like? what it contains? more info!
+
+![Alt text](/images/Screenshot_5.png?raw=true "Optional Title")
+
+3. Rollback is not implemented but it could be realised with POST https://container.googleapis.com/v1/{name=projects/*/locations/*/clusters/*/nodePools/*}:rollback request
+
+
+
+
+
+
+
+
 
