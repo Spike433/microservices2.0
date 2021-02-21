@@ -101,13 +101,12 @@ jobs:
          run: mkdir downloads 
          
        - name: SmokeTest       
-         run: |  
-          cd downloads
+         run: |            
           chmod +x ./smokeTest/smoke-services.sh
           chmod +x ./smokeTest/smoke.sh        
-          ./smokeTest/smoke-services.sh >> artifact.txt                    
-          echo "End to End Test passed" >> artifact.txt    
-          cd ..    
+          ./smokeTest/smoke-services.sh >> downloads/artifact.txt                    
+          echo "End to End Test passed" >> downloads/artifact.txt    
+          
           
        - name: Use the Upload Artifact GitHub Action
          uses: actions/upload-artifact@v2
