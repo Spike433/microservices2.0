@@ -30,7 +30,7 @@ jobs:
        - name: Use the Upload Test Artifact GitHub Action
          uses: actions/upload-artifact@v2
          with: 
-          name: publish-test-artifacts
+          name: publish-test-artifacts${{ github.run_number }}
           path: downloads      
          
           
