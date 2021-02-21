@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Smoke Test       
-         run: |   
+        run: |   
           chmod +x ./smokeTest/smoke-services.sh
           chmod +x ./smokeTest/smoke.sh
           ./smokeTest/smoke-services.sh >> artifact.txt                    
