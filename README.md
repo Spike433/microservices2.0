@@ -6,7 +6,7 @@
 
 - docker
 
-- CD/CI --> Github Actions
+- CD/CI --> [Github Actions](https://github.com/features/actions)
 
 - kubernetas deployment --> [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine)
 
