@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. smoke.sh
+. ./smokeTest/smoke.sh
 
 echo
 echo Service1 smokeTest
@@ -10,7 +10,7 @@ smoke_url_ok "http://35.228.242.68"
     
 smoke_report
 
-. smoke.sh
+. ./smokeTest/smoke.sh
 
 echo 
 echo
