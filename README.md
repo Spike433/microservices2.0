@@ -12,7 +12,7 @@
 
 ### How it works
 
-- On **push **/**pull**/**commit** to this repository /.github/workflows/**CD-CI.yml** gets triggered 
+- On **push **/**pull**/**commit**  [**CD-CI.yml**] (.github/workflows/CD-CI.yml) gets triggered 
 
 
 ![Alt text](/images/Screenshot_1.png?raw=true "Optional Title") 
