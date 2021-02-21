@@ -27,7 +27,7 @@
 
 - Login to Kubernetas Engine
 
-- Build yaml files that pull latest images from dockerHub  
+- Build yaml files in repository that pull latest images from dockerHub  
 
 
 ![Alt text](/images/Screenshot_2.png?raw=true "Optional Title") 
