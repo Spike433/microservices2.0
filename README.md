@@ -54,8 +54,9 @@
 
 ![Alt text](/images/Screenshot_5.png?raw=true "Optional Title")
 
-3. Rollback is not implemented but it could be realised with POST https://container.googleapis.com/v1/{name=projects/*/locations/*/clusters/*/nodePools/*}:rollback request
+3. [Rollback](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools/rollback )  is not implemented but it could be realised with POST https://container.googleapis.com/v1/{name=projects/*/locations/*/clusters/*/nodePools/*}:rollback request
 
+   
 
 
 
