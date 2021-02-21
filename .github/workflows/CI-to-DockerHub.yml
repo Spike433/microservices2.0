@@ -120,6 +120,9 @@ jobs:
   Deploy_to_Production:
       needs: Deploy_to_Stagging
       runs-on: ubuntu-18.04
+      steps:
+         - name: Deploy to Producion
+           run: echo "Deploy to Productions 
       
       #deploying on same cluster doesn't make sense, not sure what is expected, to make another cluster ,connect to it,
       #and deploy there ?
