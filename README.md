@@ -17,17 +17,15 @@
 
 ![Alt text](/images/Screenshot_1.png?raw=true "Optional Title") 
  
-  - _service1_ and _service2_ folders are built and sent to DockerHub \
-         1. https://hub.docker.com/repository/docker/spike433/service1 \
-         2. https://hub.docker.com/repository/docker/spike433/service2 \
-         3. kepp in mind that service1:**2.0** gets newest updates, service: **2.6** as well, dockerHub allows to overwrite current tag with same tag
+  - [_service1_](https://hub.docker.com/repository/docker/spike433/service1) and [_service2_](https://hub.docker.com/repository/docker/spike433/service2) folders are built and sent to DockerHub \
+         - kepp in mind that service1:**2.0** gets newest updates, service: **2.6** as well, dockerHub allows to overwrite current tag with same tag
 
 
 - Add artifacts to publish  ("Run" Unit Test, Integration Test)  
 
 - Login to Kubernetas Engine
 
-- Build yaml files in repository that pull latest images from dockerHub  
+- Build yaml files in repository and pull latest images from dockerHub  
 
 
 ![Alt text](/images/Screenshot_2.png?raw=true "Optional Title") 
