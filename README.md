@@ -17,7 +17,7 @@
 
 ![Alt text](/images/Screenshot_1.png?raw=true "Optional Title") 
  
-  - _service1_ and _service2 _ folders are built and sent to DockerHub \
+  - _service1_ and _service2_ folders are built and sent to DockerHub \
          1. https://hub.docker.com/repository/docker/spike433/service1 \
          2. https://hub.docker.com/repository/docker/spike433/service2 \
          3. kepp in mind that service1:**2.0** gets newest updates, service: **2.6** as well, dockerHub allows to overwrite current tag with same tag
