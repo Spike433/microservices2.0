@@ -8,7 +8,7 @@
 
 - CD/CI --> Github Actions
 
-- kubernetas deployment --> [Google Kubernetes Engine] (https://cloud.google.com/kubernetes-engine)
+- kubernetas deployment --> [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine)
 
 ### How it works
 
