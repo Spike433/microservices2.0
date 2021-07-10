@@ -1,0 +1,167 @@
+********
+
+sudo poweroff
+
+sudo reboot
+
+**********
+
+apt-get install package is apt-get remove package
+
+**********
+
+To remove all associated settings too, you need to run
+
+apt-get purge package.
+
+*************
+
+dpkg --print-architecture
+
+************
+
+Undo/Redo
+
+Alt U
+Alt E
+
+Move through tabs
+
+ctrl alt PgUp/PgDown
+
+
+***********
+
+To remove user :
+
+sudo userdel username
+
+To remove home directory :
+
+sudo rm -r /home/username
+
+
+************
+Run Script
+
+sh <name of file>.sh
+
+***********
+
+Scroll
+
+Ctrl shift up/down arrow
+
+Shift pgUp/pgDown
+
+
+************
+
+Clear Screen
+
+ctrl l
+
+Exit 
+
+crtl d
+
+ 
+************
+
+Run Jenkins From Disc
+
+docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+************
+Build DockerFile
+
+docker build -t imageName:tag locationOFDockerFile ( service1/) 
+
+Run Docker Image as container --> not usefull
+
+docker run -it imageId [/bin/bash] --> docker exec -it imageId /bin/bash
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+*****************
+
+Remove all stopped containers
+
+docker rm $(docker ps -a -q)
+
+*****************
+
+Give name and expose port
+
+docker run -d -p browserPort:applPort --name containerName image
+
+Create network
+
+docker network create name
+
+Create service with network 
+
+docker run --name service1 -dp 8080:8080 --network=mynet service1:2.0
+
+******************
+
+Run nano from docker
+
+apt-get update
+apt-get install vim nano
+
+******************
+
+Create subnet
+
+docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 app_subnet
+
+
+******************
+ Git
+
+git clone (url)  --> First time
+
+git pull origin master --> Second Use
+git add (file names)
+git commit -m "(committed message)
+git push -u origin master
+git remote add origin master (url)
+
+******************
+
+K8
+
+Delete deployment
+
+kubectl delete deployments vfe-hello-wrold
+
+Delete services
+
+kubectl delete service vfe-hello-wrold
+
+********************
+Push to DockerHub
+
+ docker tag 7d9be97a9072 spike433/service2:2.5
+ docker push spike433/service2:2.5 
+
+********************
+
+Google Cloud
+
+gcloud auth configure-docker --> connect to Repo
+
+GKE_ZONE=europe-north1-c
+
+GKE_CLUSTER=cluster1
+
+GKE_PROJECT=microservices-305313
+
+*************************
+
+
+
+
+
+
